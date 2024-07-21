@@ -1,6 +1,117 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+#App {
+  width:100%;
+}
+
+#Header {
+  background-color: rgb(172, 9, 9);
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  color:rgb(255, 255, 255);
+  position: fixed;
+}
+
+#Header h1 {
+  margin:0;
+  padding:.1em 0 .2em .3em;
+  background-color: #242424;
+  font-size: 2.6em;
+  text-align: left;
+  border-radius: 0 0 50px 0;
+}
+
+#Navi {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #242424;
+  right:0;
+  top:3.6em;
+}
+
+#Navi button {
+  background-color: rgb(172, 9, 9);
+  border-color:rgb(172, 9, 9);
+  color:white;
+}
+
+#Navi button:hover {
+  border-color:rgb(172, 9, 9);
+}
+
+#Navi button:focus,
+#Navi button:focus-visible {
+  outline:none;
+}
+
+#Navi, #Navi button {
+  border-radius: 50px 0 50px 50px;
+  transition:.25s;
+}
+
+#Navi.open, #Navi.open button {
+  border-radius: 50px 0 0 0;
+}
+
+#Menu, #MenuClone {
+  display: none;
+  flex-direction: column;
+  background-color: #242424;
+  gap:8px;
+  align-items: center;
+  font-size: .8em;
+  position: absolute;
+  top:3.3em;
+  right:0;
+  padding:1em .6em;
+}
+
+#Menu.open {
+  display: flex;
+  animation: menu-toggle .25s forwards;
+}
+
+#MenuClone {
+  display: none;
+}
+
+#MenuClone.closing {
+  display: flex;
+  animation: menu-toggle .25s reverse;
+}
+
+@keyframes menu-toggle {
+  from {
+    opacity: 0%;
+    gap:0;
+  } to {
+    opacity: 100%;
+    gap:8px;
+  }
+}
+
+hr {
+  width:100%;
+  height:1px;
+  border:none;
+  background-image: linear-gradient(90deg, transparent,rgb(172, 9, 9), transparent);
+}
+
+#Navi a {
+  text-decoration: none;
+  color:white;
+}
+
+#Navi a:hover {
+  color:rgb(131, 132, 150);
+}
+
+#Navi a:active {
+  color:rgb(255, 255, 255);
 }
