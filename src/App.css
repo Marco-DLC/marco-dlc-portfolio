@@ -2,6 +2,10 @@
   font-family:summer-dragonfly;
   src: url(./assets/fonts/Summer-Dragonfly.otf);
 }
+@font-face {
+  font-family:slenco-black;
+  src: url(./assets/fonts/Slenco-Black.otf);
+}
 
 #root {
   max-width: 1280px;
@@ -15,6 +19,8 @@
   flex-direction: column;
   background-color: rgb(172, 9, 9);
   padding-bottom: 500px;
+
+  font-family:'slenco-black','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #Header {
@@ -24,14 +30,22 @@
   width:100%;
   color:rgb(255, 255, 255);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
+
+ 
+}
+
+#Header h1,
+#Menu, #MenuClone,
+.bullet {
+  background-color: black;
+  outline-color: black;
 }
 
 #Header h1 {
   margin:0;
-  padding:.1em 0 .2em .3em;
-  background-color: #242424;
-  font-size: 2.6em;
+  padding:.2em 0 .1em .3em;
+  font-size: 42px;
   text-align: left;
   border-radius: 0 0 50px 0;
 }
@@ -72,7 +86,6 @@
 #Menu, #MenuClone {
   display: none;
   flex-direction: column;
-  background-color: #242424;
   gap:8px;
   align-items: center;
   font-size: .8em;
@@ -134,11 +147,12 @@ hr {
 }
 
 #Splash .wrapper {
-  animation: wrapper-warp 1s forwards 1s;
+  animation: wrapper-warp 1s ease-in-out forwards 1s;
   opacity: 0%;
   position: absolute;
   height:480px;
   width:320px;
+  z-index: 1;
 }
 
 @keyframes wrapper-warp {
@@ -169,4 +183,54 @@ hr {
   position: absolute;
   top:1px;
   left:43px;
+}
+
+.bullets-container {
+  position: absolute;
+  right:0;
+  display: flex;
+  flex-direction: column;
+  height:calc(100% - 68px);
+  padding-top: 60px;
+  justify-content: space-between;
+
+  perspective: 500px;
+  animation: bullets-in 1s forwards 1s;
+  opacity: 0%;
+}
+
+.bullet {
+  color:white;
+  text-wrap: wrap;
+  width:115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  outline-width: 4px; 
+  outline-style: solid;
+  outline-offset: 2px;
+  transform: rotateY(-30deg);
+}
+
+@keyframes bullets-in {
+  from {
+    height:50px;
+    top:80px;
+    right:300px;
+    opacity: 100%;
+  } 25% {
+    height:calc(100%-40px);
+  } 
+  to {
+    top:0;
+    right:6px;
+    opacity: 100%;
+  }
+}
+
+.bullet p {
+  text-align: center;
+  font-size: 14px;
+  margin:5px 5px;
 }

@@ -17,6 +17,20 @@ export default function Splash() {
           Developer
         </h1>
       </div>
+
+      <div className="bullets-container">
+        <div className="bullet">
+          <p>Determined problem-solver</p>
+        </div>
+
+        <div className="bullet">
+          <p>Passionate about user experience</p>
+        </div>
+
+        <div className="bullet">
+          <p>Loves to create fun and engaging user interfaces</p>
+        </div>
+      </div>
     </div>
   );
 }
