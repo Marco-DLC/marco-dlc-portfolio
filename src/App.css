@@ -379,8 +379,6 @@ hr {
 
 #Projects {
   background-color: white;
-  display: flex;
-  flex-direction: column;
   padding:0 15px 15px;
 }
 
@@ -390,6 +388,12 @@ hr {
   color:rgb(172, 9, 9);
   -webkit-text-stroke: 1px black;
   text-shadow: 3px 3px black;
+}
+
+#Projects .container {
+  display: flex;
+  flex-direction: column;
+  gap:25px;
 }
 
 .Card {
@@ -421,6 +425,7 @@ hr {
 .Card h4 {
   color:rgb(192, 192, 192);
   font-weight: 100px;
+  text-align: left;
 }
 
 .Card p span {
