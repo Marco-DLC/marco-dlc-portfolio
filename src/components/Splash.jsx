@@ -1,6 +1,6 @@
-export default function Splash() {
+export default function Splash({ splashRef }) {
   return (
-    <div id="Splash">
+    <div ref={splashRef} id="Splash">
       <div className="wrapper">
         <h1>
           Front-
