@@ -28,14 +28,14 @@ function Card({ project }) {
       <h3>{title}</h3>
       <h4>{subtitle}</h4>
       <hr />
-      <p>Made with <span>{tech}</span></p>
+      <p className="tech">Made with <span>{tech}</span></p>
       <img src={imgUrl} />
-      {notice && <p><strong>Notice: </strong>{notice}</p> }
+      {notice && <p><strong>Notice </strong>{notice}</p> }
       <div>
-      <a href={siteUrl}>
-        <button>Live Site</button>
+      <a href={siteUrl} target="_blank">
+        <button className="site">Live Site</button>
       </a>
-      <a href={githubUrl}>
+      <a href={githubUrl} target="_blank">
         <button>Source Code</button>
       </a>
       </div>
