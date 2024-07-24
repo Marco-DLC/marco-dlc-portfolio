@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import Splash from "./components/Splash.jsx";
+import AboutMe from "./components/AboutMe.jsx";
 
 function App() {
   const splashRef = useRef();
@@ -26,6 +27,7 @@ function App() {
     <div id="App">
       <Header splashOnScreen={splashOnScreen} />
       <Splash splashRef={splashRef} />
+      <AboutMe />
     </div>
   );
 }
