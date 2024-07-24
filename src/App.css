@@ -1,9 +1,9 @@
 @font-face {
-  font-family:summer-dragonfly;
+  font-family: summer-dragonfly;
   src: url(./assets/fonts/Summer-Dragonfly.otf);
 }
 @font-face {
-  font-family:slenco-black;
+  font-family: slenco-black;
   src: url(./assets/fonts/Slenco-Black.otf);
 }
 
@@ -14,90 +14,171 @@
 }
 
 #App {
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   background-color: rgb(172, 9, 9);
   padding-bottom: 500px;
 
-  font-family:'slenco-black','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "slenco-black", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
 }
 
 #Header {
   background-color: rgb(172, 9, 9);
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:100%;
-  color:rgb(255, 255, 255);
+  width: 100%;
+  color: rgb(255, 255, 255);
   position: fixed;
   z-index: 2;
-
- 
 }
 
 #Header h1,
-#Menu, #MenuClone,
+.title-main,
+#Header span,
+#Navi,
+#Navi button,
+#Menu,
+#MenuClone,
 .bullet {
   background-color: black;
   outline-color: black;
 }
 
 #Header h1 {
-  margin:0;
-  padding:.2em 0 .1em .3em;
+  margin: 0;
+  padding: 0.2em 0 0.1em 0.3em;
   font-size: 42px;
   text-align: left;
   border-radius: 0 0 50px 0;
+  letter-spacing: -3px;
+  word-spacing: -7px;
+  border-style: solid;
+  border-width: 0 4px 0 0;
+  border-color: black;
+  box-sizing: border-box;
+  transition: 0.25s;
+  display: flex;
+}
+
+.title-main,
+.title-L,
+.title-C {
+  display: inline;
+  z-index: 3;
+  transition: .25s;
+}
+
+.title-main,
+.title-L {
+  animation: dlc-reveal 1s ease-in-out forwards 2s;
+}
+
+@keyframes dlc-reveal {
+  from {
+    margin-right:0px;
+    word-spacing: -7px;
+  } to {
+    margin-right: 26px;
+    word-spacing: normal;
+  }
+}
+
+.span-e {
+  animation: e-reveal 1s ease-in-out forwards 2s;
+  z-index:2;
+}
+.span-a {
+  animation: a-reveal 1s ease-in-out forwards 2s;
+  z-index: 1;
+}
+.span-ruz {
+  animation: ruz-reveal 1s ease-in-out forwards 2s;
+  z-index: 0;
+}
+
+@keyframes e-reveal {
+  from {
+    left: 105px;
+  }
+  to {
+    left: 135px;
+  }
+}
+
+@keyframes a-reveal {
+  from {
+    left: 105px;
+  } to {
+    left:178px;
+  }
+}
+
+@keyframes ruz-reveal {
+  from {
+    left:75px;
+  } to {
+    left:226px;
+  }
+}
+
+#Header h1 span {
+  position: absolute;
+}
+
+#Header:has(#Navi.open) h1 {
+  border-color: white;
 }
 
 #Navi {
   display: flex;
   position: absolute;
   flex-direction: column;
-  background-color: #242424;
-  right:0;
-  top:3.6em;
+  right: 0;
+  top: 3.8em;
 }
 
 #Navi button {
   background-color: rgb(172, 9, 9);
-  border-color:rgb(172, 9, 9);
-  color:white;
+  border-width: 0 0 2px 3px;
+  border-color: black;
+  outline: 3px solid rgb(172, 9, 9);
+  color: white;
 }
 
 #Navi button:hover {
-  border-color:rgb(172, 9, 9);
+  border-color: white;
 }
 
-#Navi button:focus,
-#Navi button:focus-visible {
-  outline:none;
-}
-
-#Navi, #Navi button {
+#Navi,
+#Navi button {
   border-radius: 50px 0 50px 50px;
-  transition:.25s;
+  transition: 0.25s;
 }
 
-#Navi.open, #Navi.open button {
+#Navi.open,
+#Navi.open button {
   border-radius: 50px 0 0 0;
+  border-color: white;
 }
 
-#Menu, #MenuClone {
+#Menu,
+#MenuClone {
   display: none;
   flex-direction: column;
-  gap:8px;
+  gap: 8px;
   align-items: center;
-  font-size: .8em;
+  font-size: 0.8em;
   position: absolute;
-  top:3.3em;
-  right:0;
-  padding:1em .6em;
+  top: 3.3em;
+  right: 0;
+  padding: 1em 0.6em;
 }
 
 #Menu.open {
   display: flex;
-  animation: menu-toggle .25s forwards;
+  animation: menu-toggle 0.25s forwards;
 }
 
 #MenuClone {
@@ -106,52 +187,59 @@
 
 #MenuClone.closing {
   display: flex;
-  animation: menu-toggle .25s reverse;
+  animation: menu-toggle 0.25s reverse;
 }
 
 @keyframes menu-toggle {
   from {
     opacity: 0%;
-    gap:0;
-  } to {
+    gap: 0;
+  }
+  to {
     opacity: 100%;
-    gap:8px;
+    gap: 8px;
   }
 }
 
 hr {
-  width:100%;
-  height:1px;
-  border:none;
-  background-image: linear-gradient(90deg, transparent,rgb(172, 9, 9), transparent);
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgb(172, 9, 9),
+    transparent
+  );
 }
 
 #Navi a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
 #Navi a:hover {
-  color:rgb(131, 132, 150);
+  color: rgb(131, 132, 150);
 }
 
 #Navi a:active {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 #Splash {
-  margin-top: 3.6em;
+  margin-top: 3.7em;
+  padding-top: 3px;
   background-color: white;
   position: relative;
-  height:480px;
+  height: 480px;
 }
 
 #Splash .wrapper {
   animation: wrapper-warp 1s ease-in-out forwards 1s;
   opacity: 0%;
   position: absolute;
-  height:480px;
-  width:320px;
+  height: 480px;
+  width: 320px;
   z-index: 1;
 }
 
@@ -159,7 +247,8 @@ hr {
   from {
     perspective: 50px;
     opacity: 100%;
-  } to {
+  }
+  to {
     perspective: 200px;
     opacity: 100%;
   }
@@ -171,27 +260,27 @@ hr {
   line-height: 105px;
   transform: rotateY(30deg);
   font-size: 130px;
-  color:rgb(172, 9, 9);
+  color: rgb(172, 9, 9);
   position: absolute;
-  top:0;
-  left:40px;
+  top: 0;
+  left: 40px;
 }
 
 #Splash .text-effect {
   -webkit-text-stroke: 2px black;
   color: transparent;
   position: absolute;
-  top:1px;
-  left:43px;
+  top: 1px;
+  left: 43px;
 }
 
 .bullets-container {
   position: absolute;
-  right:0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  height:calc(100% - 68px);
-  padding-top: 60px;
+  height: calc(100% - 71px);
+  padding-top: 63px;
   justify-content: space-between;
 
   perspective: 500px;
@@ -200,14 +289,14 @@ hr {
 }
 
 .bullet {
-  color:white;
+  color: white;
   text-wrap: wrap;
-  width:115px;
+  width: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  outline-width: 4px; 
+
+  outline-width: 4px;
   outline-style: solid;
   outline-offset: 2px;
   transform: rotateY(-30deg);
@@ -215,16 +304,17 @@ hr {
 
 @keyframes bullets-in {
   from {
-    height:50px;
-    top:80px;
-    right:300px;
+    height: 50px;
+    top: 80px;
+    right: 300px;
     opacity: 100%;
-  } 25% {
-    height:calc(100%-40px);
-  } 
+  }
+  25% {
+    height: calc(100%-40px);
+  }
   to {
-    top:0;
-    right:6px;
+    top: 0;
+    right: 6px;
     opacity: 100%;
   }
 }
@@ -232,5 +322,5 @@ hr {
 .bullet p {
   text-align: center;
   font-size: 14px;
-  margin:5px 5px;
+  margin: 5px 5px;
 }

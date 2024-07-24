@@ -1,12 +1,19 @@
-import Navigator from "./Navigator"
+import Navigator from "./Navigator";
 
-export default function Header(){
-    return (
-        <header id="Header">
-            <div className="left">
-            <h1>Marco DLC</h1>
-            </div>
-            <Navigator />
-        </header>
-    )
+export default function Header() {
+  return (
+    <header id="Header">
+      <div>
+        <h1>
+          <div className="title-main">Marco D</div>
+          <span className="span-e">e</span>
+          <div className="title-L">L</div>
+          <span className="span-a">a</span>
+          <div className="title-C">C</div>
+          <span className="span-ruz">ruz</span>
+        </h1>
+      </div>
+      <Navigator />
+    </header>
+  );
 }
