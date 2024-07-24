@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 import Splash from "./components/Splash.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Projects from "./components/Projects.jsx";
+import Skills from "./components/Skills.jsx";
 
 function App() {
   const splashRef = useRef();
@@ -29,6 +30,7 @@ function App() {
       <Header splashOnScreen={splashOnScreen} />
       <Splash splashRef={splashRef} />
       <AboutMe />
+      <Skills />
       <Projects />
     </div>
   );
