@@ -70,8 +70,16 @@
   transition: .25s;
 }
 
-.title-main,
-.title-L {
+.animate .title-main,
+.animate .title-L {
+  animation: dlc-reveal 1s ease-in-out forwards;
+}
+.animate-reverse .title-main,
+.animate-reverse .title-L {
+  animation: dlc-reveal 1s ease-in-out reverse;
+}
+.initial-animate .title-main,
+.initial-animate .title-L {
   animation: dlc-reveal 1s ease-in-out forwards 2s;
 }
 
@@ -85,17 +93,38 @@
   }
 }
 
-.span-e {
+.span-e {z-index:2;}
+.span-a {z-index: 1;}
+.span-ruz {z-index: 0;}
+
+.animate .span-e {
+  animation: e-reveal 1s ease-in-out forwards;
+}
+.animate-reverse .span-e {
+  animation: e-reveal 1s ease-in-out reverse;
+}
+.initial-animate .span-e {
   animation: e-reveal 1s ease-in-out forwards 2s;
-  z-index:2;
 }
-.span-a {
+
+.animate .span-a {
+  animation: a-reveal 1s ease-in-out forwards;
+}
+.animate-reverse .span-a {
+  animation: a-reveal 1s ease-in-out reverse;
+}
+.initial-animate .span-a {
   animation: a-reveal 1s ease-in-out forwards 2s;
-  z-index: 1;
 }
-.span-ruz {
+
+.animate .span-ruz {
+  animation: ruz-reveal 1s ease-in-out forwards;
+}
+.animate-reverse .span-ruz {
+  animation: ruz-reveal 1s ease-in-out reverse;
+}
+.initial-animate .span-ruz {
   animation: ruz-reveal 1s ease-in-out forwards 2s;
-  z-index: 0;
 }
 
 @keyframes e-reveal {
