@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ContactMe() {
+export default function ContactMe({contactRef}) {
   const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (event) => {
@@ -21,7 +21,7 @@ export default function ContactMe() {
   document.querySelector("form").addEventListener("submit", handleSubmit);
       
   return (
-    <div id="ContactMe">
+    <div id="ContactMe" ref={contactRef}>
       <h2>Contact Me</h2>
       {isSent ? (
         <div>

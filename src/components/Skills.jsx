@@ -1,6 +1,6 @@
-export default function Skills() {
+export default function Skills({skillsRef}) {
   return (
-    <div id="Skills">
+    <div id="Skills" ref={skillsRef}>
       <div className="tech-skills">
         <h3>Developer Skills</h3>
         <SkillCard skillName="React" imgSrc="/react-logo.png" />

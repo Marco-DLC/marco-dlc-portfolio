@@ -1,4 +1,4 @@
-export default function Projects() {
+export default function Projects({projectsRef}) {
   const yerryWrightProj = {
     title: "Yeremiya Wright",
     subtitle: "Portfolio for a NYC Jazz Vocalist",
@@ -32,7 +32,7 @@ export default function Projects() {
   };
 
   return (
-    <div id="Projects">
+    <div id="Projects" ref={projectsRef}>
       <h2>My Work</h2>
       <div className="container">
         <Card project={yerryWrightProj} />

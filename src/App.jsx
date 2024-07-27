@@ -12,6 +12,14 @@ function App() {
   const splashRef = useRef();
   const [splashOnScreen, setSplashOnScreen] = useState(true);
 
+  const sectionRefs = {
+  aboutMeRef: useRef(null),
+  skillsRef: useRef(null),
+  projectsRef: useRef(null),
+  resumeRef: useRef(null),
+  contactRef:  useRef(null),
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,13 +37,13 @@ function App() {
 
   return (
     <div id="App">
-      <Header splashOnScreen={splashOnScreen} />
+      <Header splashOnScreen={splashOnScreen} sectionRefs={sectionRefs} />
       <Splash splashRef={splashRef} />
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Resume />
-      <ContactMe />
+      <AboutMe aboutMeRef={sectionRefs.aboutMeRef} />
+      <Skills skillsRef={sectionRefs.skillsRef} />
+      <Projects projectsRef={sectionRefs.projectsRef} />
+      <Resume resumeRef={sectionRefs.resumeRef} />
+      <ContactMe contactRef={sectionRefs.contactRef} />
     </div>
   );
 }

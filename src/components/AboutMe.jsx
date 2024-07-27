@@ -1,6 +1,6 @@
-export default function AboutMe() {
+export default function AboutMe({aboutMeRef}) {
   return (
-    <div id="AboutMe">
+    <div id="AboutMe" ref={aboutMeRef}>
       <h2>Hi, I&apos;m Marco.</h2>
       <p>
         Ever since I was young, I&apos;ve always been curious about how things

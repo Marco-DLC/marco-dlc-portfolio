@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Navigator from "./Navigator";
 
-export default function Header({ splashOnScreen }) {
+export default function Header({ splashOnScreen, sectionRefs }) {
   const h1Ref = useRef();
   const [initialLoad, setInitialLoad] = useState(true);
 
@@ -41,7 +41,7 @@ export default function Header({ splashOnScreen }) {
           <span className="span-ruz ">ruz</span>
         </h1>
       </div>
-      <Navigator />
+      <Navigator sectionRefs={sectionRefs} />
     </header>
   );
 }
