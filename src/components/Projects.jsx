@@ -47,7 +47,7 @@ function Card({ project }) {
   const { title, subtitle, imgUrl, siteUrl, notice, githubUrl, tech } = project;
 
   return (
-    <div className="Card">
+    <div className="Card fade-in-children">
       <h3>{title}</h3>
       <h4>{subtitle}</h4>
       <hr />

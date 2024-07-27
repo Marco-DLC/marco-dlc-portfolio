@@ -22,14 +22,14 @@ export default function ContactMe({contactRef}) {
       
   return (
     <div id="ContactMe" ref={contactRef}>
-      <h2>Contact Me</h2>
+      <h2 className="fade-scale-in">Contact Me</h2>
       {isSent ? (
         <div>
           <h3>Thank You!</h3>
           <p>Your message has been sent.</p>
         </div>
       ) : (
-        <form name="contact" action={handleSubmit} method="POST">
+        <form className="fade-scale-in" name="contact" action={handleSubmit} method="POST">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label htmlFor="name">Name: </label>

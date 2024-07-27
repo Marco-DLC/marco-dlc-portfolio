@@ -21,7 +21,7 @@ export default function Skills({skillsRef}) {
 
 function SkillCard({ imgSrc, skillName }) {
   return (
-    <div className="skill-card">
+    <div className="skill-card fade-scale-in">
       <img src={imgSrc} />
       <p>{skillName}</p>
     </div>

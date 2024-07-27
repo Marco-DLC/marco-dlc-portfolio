@@ -507,7 +507,6 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: black;
   padding: 15px;
   box-sizing: border-box;
   width: 100%;
@@ -542,8 +541,7 @@ hr {
 }
 
 #Resume {
-  background-color: black;
-  padding: 20px;
+  padding: 20px 15px;
 }
 
 #Resume h2 {
@@ -647,4 +645,42 @@ form button:hover {
 #footer img {
   filter: invert();
   width:25px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-scale-in {
+    opacity: 0%;
+    scale:80%;
+    animation: fade-scale-in forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  .skill-card.fade-scale-in {
+    animation-range: 150px 350px;
+  }
+
+  .fade-in-children > * {
+    opacity: 0%;
+    animation: fade-in forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  .Card.fade-in-children div {
+    animation-range:25px 75px;
+  }
+
+  @keyframes fade-scale-in {
+     to {
+      opacity: 100%;
+      scale:100%;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 100%;
+    }
+  }
 }
