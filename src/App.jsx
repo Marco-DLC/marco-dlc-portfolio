@@ -5,6 +5,7 @@ import Splash from "./components/Splash.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Projects from "./components/Projects.jsx";
 import Skills from "./components/Skills.jsx";
+import Resume from "./components/Resume.jsx";
 
 function App() {
   const splashRef = useRef();
@@ -32,6 +33,7 @@ function App() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Resume />
     </div>
   );
 }
