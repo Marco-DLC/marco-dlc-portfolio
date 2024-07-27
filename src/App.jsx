@@ -13,11 +13,11 @@ function App() {
   const [splashOnScreen, setSplashOnScreen] = useState(true);
 
   const sectionRefs = {
-  aboutMeRef: useRef(null),
-  skillsRef: useRef(null),
-  projectsRef: useRef(null),
-  resumeRef: useRef(null),
-  contactRef:  useRef(null),
+    aboutMeRef: useRef(null),
+    skillsRef: useRef(null),
+    projectsRef: useRef(null),
+    resumeRef: useRef(null),
+    contactRef: useRef(null),
   };
 
   useEffect(() => {
@@ -44,6 +44,16 @@ function App() {
       <Projects projectsRef={sectionRefs.projectsRef} />
       <Resume resumeRef={sectionRefs.resumeRef} />
       <ContactMe contactRef={sectionRefs.contactRef} />
+      <div id="footer">
+        <span>&copy; 2024 Marco De La Cruz</span>
+        <a
+          href="https://github.com/Marco-DLC"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <img src="/github-icon.png" />
+        </a>
+      </div>
     </div>
   );
 }

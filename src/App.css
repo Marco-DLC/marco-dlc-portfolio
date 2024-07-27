@@ -632,3 +632,19 @@ form button {
 form button:hover {
   border-color: white;
 }
+
+#footer {
+  background-color: black;
+  color:white;
+  display: flex;
+  font-size: .8em;
+  gap:25px;
+  justify-content: center;
+  align-items: center;
+  padding:5px 15px;
+}
+
+#footer img {
+  filter: invert();
+  width:25px;
+}
