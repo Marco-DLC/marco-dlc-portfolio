@@ -23,7 +23,7 @@ export default function ContactMe() {
     <div id="ContactMe">
       <h2>Contact Me</h2>
       <form name="contact" action={handleSubmit} method="POST">
-      <input type="hidden" value="contact" />
+      <input type="hidden" name="form-name" value="contact" />
         <p>
           <label htmlFor="name" >Name: </label>
           <input type="text" id='name' name="name" />
