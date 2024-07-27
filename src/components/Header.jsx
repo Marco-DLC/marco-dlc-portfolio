@@ -29,10 +29,14 @@ export default function Header({ splashOnScreen, sectionRefs }) {
     }
   }, [splashOnScreen]);
 
+  const handleClick = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  }
+
   return (
     <header id="Header">
       <div>
-        <h1 ref={h1Ref}>
+        <h1 onClick={handleClick} ref={h1Ref}>
           <div className="title-main ">Marco D</div>
           <span className="span-e ">e</span>
           <div className="title-L ">L</div>

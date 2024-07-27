@@ -32,22 +32,19 @@ export default function Navigator({ sectionRefs }) {
       </button>
       <Menu
         id="Menu"
-        sectionRefs={sectionRefs}
+        sectionRefs={sectionRefs} handleClick={handleClick}
         className={menuOpen.opened ? "open" : ""}
       />
-      <Menu id="MenuClone" sectionRefs={sectionRefs} className={menuOpen.closing ? "closing" : ""} />
+      <Menu id="MenuClone" sectionRefs={sectionRefs} handleClick={handleClick} className={menuOpen.closing ? "closing" : ""} />
     </div>
   );
 }
 
-function Menu({ id, className, sectionRefs }) {
+function Menu({ id, className, sectionRefs, handleClick }) {
 
   const scrollToSection = (ref) => {
-    if (ref) {
       ref.current.scrollIntoView({behavior:'smooth'});
-    } else {
-      window.scrollTo({top: 0, behavior: 'smooth'})
-    }
+      handleClick();
   };
 
   return (
