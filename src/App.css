@@ -657,15 +657,15 @@ form button:hover {
   width:25px;
 }
 
-@media (min-width:600px) {
-  
-}
-
-@media (min-width:1200px) {
+@media (min-width:715px) {
+  div:has(> #Splash),
+  div:has(> #Projects) {
+    background-color: white;
+  }
 
   #Splash {
-    width:800px;
-    height:80vh;
+    width:700px;
+    height:70vh;
     margin-left:auto;
     margin-right:auto;
   }
@@ -688,8 +688,8 @@ form button:hover {
   }
 
   .bullets-container {
-    font-size: 32px;
-    --start-bullets-right:3000px;
+    font-size: 26px;
+    --start-bullets-right:1200px;
   }
 
   .bullet {
@@ -699,7 +699,7 @@ form button:hover {
   .bullet p{
     font-size: inherit;
   }
-  
+
   #AboutMe, #Skills,
   #Projects, #Resume,
   #ContactMe {
@@ -707,17 +707,12 @@ form button:hover {
     margin-right:auto;
   }
 
-  div:has(> #Splash),
-  div:has(> #Projects) {
-    background-color: white;
-  }
-
   #AboutMe {
     width:700px;
     padding:75px 0;
     border:3px dotted white;
     padding:0 15px 15px;
-    margin:33px auto;
+    margin:53px auto;
   }
 
   #AboutMe p {
@@ -725,8 +720,8 @@ form button:hover {
   }
 
   #Skills {
-    width:800px;
-    gap:50px;
+    width:100%;
+    gap:25px;
     flex-direction: row;
     padding-bottom:75px;
   }
@@ -737,24 +732,10 @@ form button:hover {
   }
 
   #Projects {
-    max-width: 1280px;
-  }
-
-  #Projects .container {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .Card {
-    
-  }
-
-  #Projects img {
-    max-width:80%;
+    max-width: 500px;
   }
 
   #Resume {
-    width:400px;
     place-self: center;
     border:1px solid white;
   }
@@ -764,7 +745,7 @@ form button:hover {
   }
 
   #bottom-section-container {
-    width:1200px;
+    width:700px;
     margin:auto;
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -782,7 +763,49 @@ form button:hover {
   #ContactMe form {
     border:2px black solid;
   }
+  
+}
 
+@media (min-width:1200px) {
+
+  #Splash {
+    width:800px;
+  }
+
+  .bullets-container {
+    font-size: 32px;
+    --start-bullets-right:3000px;
+  }
+
+  #AboutMe {
+    margin:33px auto;
+  }
+
+  #Skills {
+    width:800px;
+    gap:50px;
+  }
+
+  #Projects {
+    max-width: 1280px;
+  }
+
+  #Projects .container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #Projects img {
+    max-width:80%;
+  }
+
+  #Resume {
+    width:400px;
+  }
+
+  #bottom-section-container {
+    width:1200px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
