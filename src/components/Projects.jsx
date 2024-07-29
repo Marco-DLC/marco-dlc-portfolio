@@ -1,4 +1,4 @@
-export default function Projects({projectsRef}) {
+export default function Projects({ projectsRef }) {
   const yerryWrightProj = {
     title: "Yeremiya Wright",
     subtitle: "Portfolio for a NYC Jazz Vocalist",
@@ -32,12 +32,14 @@ export default function Projects({projectsRef}) {
   };
 
   return (
-    <div id="Projects" ref={projectsRef}>
-      <h2>My Work</h2>
-      <div className="container">
-        <Card project={yerryWrightProj} />
-        <Card project={grimeyLimesProj} />
-        <Card project={espersWorldProj} />
+    <div>
+      <div id="Projects" ref={projectsRef}>
+        <h2>My Work</h2>
+        <div className="container">
+          <Card project={yerryWrightProj} />
+          <Card project={grimeyLimesProj} />
+          <Card project={espersWorldProj} />
+        </div>
       </div>
     </div>
   );

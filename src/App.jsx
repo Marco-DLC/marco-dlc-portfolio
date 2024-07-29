@@ -42,8 +42,10 @@ function App() {
       <AboutMe aboutMeRef={sectionRefs.aboutMeRef} />
       <Skills skillsRef={sectionRefs.skillsRef} />
       <Projects projectsRef={sectionRefs.projectsRef} />
+      <div id="bottom-section-container">
       <Resume resumeRef={sectionRefs.resumeRef} />
       <ContactMe contactRef={sectionRefs.contactRef} />
+      </div>
       <div id="footer">
         <span>&copy; 2024 Marco De La Cruz</span>
         <a

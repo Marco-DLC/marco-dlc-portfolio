@@ -14,7 +14,7 @@ export default function Header({ splashOnScreen, sectionRefs }) {
       void h1Element.offsetWidth;
 
       if (initialLoad) {
-        h1Element.classList.add('animate',"initial-animate");
+        h1Element.classList.add("animate", "initial-animate");
         setTimeout(() => {
           h1Element.classList.remove("initial-animate");
           setInitialLoad(false);
@@ -30,22 +30,22 @@ export default function Header({ splashOnScreen, sectionRefs }) {
   }, [splashOnScreen]);
 
   const handleClick = () => {
-    window.scrollTo({top: 0, behavior: 'smooth'})
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <header id="Header">
-      <div>
-        <h1 onClick={handleClick} ref={h1Ref}>
-          <div className="title-main ">Marco D</div>
-          <span className="span-e ">e</span>
-          <div className="title-L ">L</div>
-          <span className="span-a ">a</span>
-          <div className="title-C ">C</div>
-          <span className="span-ruz ">ruz</span>
-        </h1>
-      </div>
-      <Navigator sectionRefs={sectionRefs} />
+        <div>
+          <h1 onClick={handleClick} ref={h1Ref}>
+            <div className="title-main ">Marco D</div>
+            <span className="span-e ">e</span>
+            <div className="title-L ">L</div>
+            <span className="span-a ">a</span>
+            <div className="title-C ">C</div>
+            <span className="span-ruz ">ruz</span>
+          </h1>
+        </div>
+        <Navigator sectionRefs={sectionRefs} />
     </header>
   );
 }

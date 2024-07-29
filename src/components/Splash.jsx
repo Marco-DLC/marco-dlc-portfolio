@@ -1,7 +1,8 @@
 export default function Splash({ splashRef }) {
   return (
-    <div ref={splashRef} id="Splash">
-      <div className="wrapper">
+    <div>
+      <div ref={splashRef} id="Splash">
+        <div className="wrapper">
         <h1>
           Front-
           <br />
@@ -18,17 +19,18 @@ export default function Splash({ splashRef }) {
         </h1>
       </div>
 
-      <div className="bullets-container">
-        <div className="bullet">
-          <p>Determined problem-solver</p>
-        </div>
+        <div className="bullets-container">
+          <div className="bullet">
+            <p>Determined problem-solver</p>
+          </div>
 
-        <div className="bullet">
-          <p>Passionate about user experience</p>
-        </div>
+          <div className="bullet">
+            <p>Passionate about user experience</p>
+          </div>
 
-        <div className="bullet">
-          <p>Loves to create fun and engaging user interfaces</p>
+          <div className="bullet">
+            <p>Loves to create fun and engaging user interfaces</p>
+          </div>
         </div>
       </div>
     </div>

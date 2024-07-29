@@ -8,7 +8,6 @@
 }
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 }
@@ -280,6 +279,7 @@ hr {
 
 #Splash .wrapper {
   animation: wrapper-warp 1s ease-in-out forwards 1s;
+  --end-perspective:200px;
   opacity: 0%;
   position: absolute;
   height: 480px;
@@ -293,7 +293,7 @@ hr {
     opacity: 100%;
   }
   to {
-    perspective: 200px;
+    perspective: var(--end-perspective);
     opacity: 100%;
   }
 }
@@ -311,7 +311,7 @@ hr {
 }
 
 #Splash .text-effect {
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: .0153846em black;
   color: transparent;
   position: absolute;
   top: 1px;
@@ -329,6 +329,7 @@ hr {
 
   perspective: 500px;
   animation: bullets-in 1s forwards 1s;
+  --start-bullets-right:600px;
   opacity: 0%;
 }
 
@@ -350,7 +351,7 @@ hr {
   from {
     height: 50px;
     top: 80px;
-    right: 300px;
+    right: var(--start-bullets-right);
     opacity: 100%;
   }
   25% {
@@ -415,6 +416,7 @@ hr {
 .Card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: black;
   outline: solid 6px black;
   outline-offset: 1px;
@@ -546,6 +548,14 @@ hr {
 
 #Resume h2 {
   margin: 0;
+  border:1px solid black;
+  border-radius: 10px;
+  color:white;
+  -webkit-text-stroke: 1px rgb(172, 9, 9);
+  text-shadow: 2px 2px rgb(172, 9, 9);
+  align-self: center;
+  padding:0 15px;
+  box-shadow:4px 4px black;
 }
 
 #Resume div {
@@ -645,6 +655,134 @@ form button:hover {
 #footer img {
   filter: invert();
   width:25px;
+}
+
+@media (min-width:600px) {
+  
+}
+
+@media (min-width:1200px) {
+
+  #Splash {
+    width:800px;
+    height:80vh;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  #Splash .wrapper {
+    width:620px;
+    --end-perspective:500px;
+    top:15%;
+  }
+
+  #Splash h1 {
+    font-size: 230px;
+    line-height: 175px;
+    margin:0;
+  }
+
+  #Splash .text-effect {
+    top:3px;
+    left:46px;
+  }
+
+  .bullets-container {
+    font-size: 32px;
+    --start-bullets-right:3000px;
+  }
+
+  .bullet {
+    width:225px;
+  }
+
+  .bullet p{
+    font-size: inherit;
+  }
+  
+  #AboutMe, #Skills,
+  #Projects, #Resume,
+  #ContactMe {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  div:has(> #Splash),
+  div:has(> #Projects) {
+    background-color: white;
+  }
+
+  #AboutMe {
+    width:700px;
+    padding:75px 0;
+    border:3px dotted white;
+    padding:0 15px 15px;
+    margin:33px auto;
+  }
+
+  #AboutMe p {
+    line-height: 2em;
+  }
+
+  #Skills {
+    width:800px;
+    gap:50px;
+    flex-direction: row;
+    padding-bottom:75px;
+  }
+
+  .tech-skills,
+  .tools {
+    width:100%;
+  }
+
+  #Projects {
+    max-width: 1280px;
+  }
+
+  #Projects .container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .Card {
+    
+  }
+
+  #Projects img {
+    max-width:80%;
+  }
+
+  #Resume {
+    width:400px;
+    place-self: center;
+    border:1px solid white;
+  }
+
+  #Resume div {
+    gap:55px;
+  }
+
+  #bottom-section-container {
+    width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #ContactMe {
+    padding:20px 15px;
+    background-color: rgb(172, 9, 9);
+  }
+
+  #ContactMe h2 {
+    border:1px solid black;
+  }
+
+  #ContactMe form {
+    border:2px black solid;
+  }
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
