@@ -766,6 +766,13 @@ form button:hover {
   
 }
 
+@media (min-width:1000px) {
+  #Splash h1 {
+    font-size: 200px;
+    line-height: 150px;
+  }
+}
+
 @media (min-width:1200px) {
 
   #Splash {
@@ -814,18 +821,19 @@ form button:hover {
     scale:80%;
     animation: fade-scale-in forwards;
     animation-timeline: view();
-    animation-range: 100px 300px;
+    animation-range: 25vh 45vh;
   }
 
-  .skill-card.fade-scale-in {
-    animation-range: 150px 350px;
+  #Resume .fade-scale-in,
+  #ContactMe .fade-scale-in {
+    animation-range: 100px 200px;
   }
 
   .fade-in-children > * {
     opacity: 0%;
     animation: fade-in forwards;
     animation-timeline: view();
-    animation-range: 100px 300px;
+    animation-range: 25vh 45vh;
   }
 
   .Card.fade-in-children div {
